@@ -7,13 +7,31 @@
         <meta name="author" content="Amir Asyraf">
         <meta name="description" content="Fast Malaysian postcode search with Elasticsearch and autocomplete search">
         <meta name="keywords" content="">
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" type="text/css">
         <link rel="stylesheet" href="style.css" type="text/css">
     </head>
     <body>
-    	<h1>Postcodes in Malaysia</h1>
-
-    	<input type="text" id="input">
-  		<ul id="location"></ul>
+    	<div class="site-container">
+    		<div class="container">
+    			<div class="card">
+    				<div class="card-header">
+    					<h2>MyPOSTCODE</h2>
+    					<h3>Malaysian Postcode Repository</h3>
+    					<form class="pure-form">
+    						<input type="text" id="input">
+    					</form>
+    				</div>
+    				<div class="card-body">
+    					<div class="result">
+  							<ul id="location"></ul>
+  						</div>
+    				</div>
+    				<div class="card-footer">
+    					<span>footer</span>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
 
     	<script type="text/javascript" src="index.js"></script>
     </body>
