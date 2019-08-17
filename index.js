@@ -3,11 +3,13 @@ let timeout = null;
 let keysToIgnore = [8, 9, 13, 16, 17, 18, 19, 20, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46];
 
 textInput.onkeydown = function (e) {
+
     let key = e.which || e.keyCode;
-    if (keysToIgnore.indexOf(key) > -1)
+    if (keysToIgnore.indexOf(key) > -1) // Ignore non-input keys (e.g. SHIFT, SPACE, TAB etc)
         return;
-    else if (key === 27) // ESC pressed
+    else if (key === 27) // Clear result when ESC pressed
         return deleteNode();
+
     deleteNode();
     clearTimeout(timeout);
 
@@ -31,7 +33,7 @@ textInput.onkeydown = function (e) {
             return location.map(function(location) {
               let li = createNode('li'),
                   span = createNode('span');
-              span.innerHTML = `${location._source.area} ${location._source.postcode}`;
+              span.innerHTML = `${location._source.area} ${location._source.postcode} ${location._source.town}`;
               append(li, span);
               append(ul, li);
             })
