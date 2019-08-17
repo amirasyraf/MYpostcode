@@ -2,7 +2,7 @@ let textInput = document.getElementById('input');
 let timeout = null;
 let keysToIgnore = [8, 9, 13, 16, 17, 18, 19, 20, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46];
 
-textInput.onkeydown = function (e) {
+textInput.onkeydown = function (e) { // Function is called every time a key is pressed on the input box
 
     let key = e.which || e.keyCode;
     if (keysToIgnore.indexOf(key) > -1) // Ignore non-input keys (e.g. SHIFT, SPACE, TAB etc)
@@ -17,8 +17,7 @@ textInput.onkeydown = function (e) {
         let query = {query: textInput.value};
         console.log(query);
         const ul = document.getElementById('location');
-        // const url = encodeURI('http://35.247.157.195:9200/postcode/_search?size=1&q=area:' + textInput.value);
-        const url = 'server.php';
+        const url = 'data/fetch.php';
         fetch(url, {
             method: 'POST',
             headers: {
