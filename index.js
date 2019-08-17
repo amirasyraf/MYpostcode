@@ -1,7 +1,14 @@
 let textInput = document.getElementById('input');
 let timeout = null;
+let keysToIgnore = [8, 9, 13, 16, 17, 18, 19, 20, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46];
 
 textInput.onkeydown = function (e) {
+    let key = e.which || e.keyCode;
+    if (keysToIgnore.indexOf(key) > -1)
+        return;
+    else if (key === 27) // ESC pressed
+        return deleteNode();
+    deleteNode();
     clearTimeout(timeout);
 
     timeout = setTimeout(function () {
@@ -37,9 +44,16 @@ textInput.onkeydown = function (e) {
 
 
 function createNode(element) {
-  return document.createElement(element);
+    return document.createElement(element);
 }
 
 function append(parent, el) {
-return parent.appendChild(el);
+    return parent.appendChild(el);
+}
+
+function deleteNode() {
+    let element = document.getElementById("location");
+    while (element.firstChild) {
+      element.removeChild(element.firstChild);
+    }
 }
