@@ -48,7 +48,7 @@ body {
 
 .result {
 	height: 15em;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 
 .pure-form {

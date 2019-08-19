@@ -13,7 +13,7 @@ textInput.onkeydown = function (e) { // Function is called every time a key is p
     deleteNode();
     clearTimeout(timeout);
 
-    timeout = setTimeout(function () {
+    timeout = setTimeout(function () { // Debounce
         let query = {query: textInput.value};
         console.log(query);
         const ul = document.getElementById('location');
