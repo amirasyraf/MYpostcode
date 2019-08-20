@@ -80,5 +80,5 @@ function checkES() {
 
     setTimeout(function() {
         esStatus.classList.add("es-status-disappear");
-    }, 5000);
+    }, 3000);
 }
