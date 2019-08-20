@@ -12,4 +12,4 @@ Apparently, there are more than 50K+ unique postcodes in Malaysia
  
  ### Working demo
  
- https://apps.amirasyraf.dev/postcode/
+ https://apps.amirasyraf.dev/mypostcode/
