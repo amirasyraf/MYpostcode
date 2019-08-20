@@ -71,14 +71,14 @@ function checkES() {
         if(data.cluster_uuid === 'SP8xKYENRveeKtGQSDgTKQ') {
             esStatus.classList.add("es-up");
             esStatus.innerHTML = "<p>Search Engine up :)</p>";
+
+            setTimeout(function() {
+                esStatus.classList.add("es-status-disappear");
+            }, 3000);
         }
     })
     .catch(function(error) {
         esStatus.classList.add("es-down");
         esStatus.innerHTML = "<p>Search Engine down :(</p>";
     });
-
-    setTimeout(function() {
-        esStatus.classList.add("es-status-disappear");
-    }, 3000);
 }
